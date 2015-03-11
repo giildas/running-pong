@@ -1,4 +1,4 @@
-#N canvas 235 127 485 373 10;
+#N canvas 754 320 485 373 10;
 #X obj 32 21 gemhead;
 #X obj 106 17 inlet;
 #N canvas 220 120 543 440 collision_balle_pad 0;
@@ -108,8 +108,10 @@ bug \, attendre un peu avant de retester;
 #X text 30 299 arguments \; xpos ysize;
 #X obj 125 233 r padsize;
 #X obj 32 264 rectangle 0.15 1;
+#X floatatom 186 72 5 0 0 0 - - -;
 #X connect 0 0 3 0;
 #X connect 1 0 2 0;
 #X connect 1 0 3 2;
+#X connect 1 0 7 0;
 #X connect 3 0 6 0;
 #X connect 5 0 6 2;
