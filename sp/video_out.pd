@@ -11,7 +11,7 @@
 #X obj 68 4 loadbang;
 #X obj 89 89 t b b b b b;
 #X msg 330 129 offset 0 0;
-#X msg 144 129 dimen 720 480;
+#X msg 144 129 dimen 720 405;
 #X connect 1 0 0 0;
 #X connect 2 0 0 0;
 #X connect 3 0 0 0;
