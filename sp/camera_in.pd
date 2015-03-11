@@ -1,0 +1,66 @@
+#N canvas 362 63 763 572 10;
+#X obj 225 271 pix_video;
+#X msg 402 237 dialog;
+#X obj 225 369 pix_flip;
+#X msg 170 279 none;
+#X msg 347 237 close;
+#X obj 268 405 s video;
+#X obj 103 118 bng 15 250 50 0 empty empty open 17 7 0 10 -262144 -1
+-1;
+#X obj 338 118 bng 15 250 50 0 empty empty dialog 17 7 0 10 -262144
+-1 -1;
+#X obj 157 118 bng 15 250 50 0 empty empty flip_horiz 17 7 0 10 -262144
+-1 -1;
+#X obj 260 147 bng 15 250 50 0 empty empty no_flip 17 7 0 10 -262144
+-1 -1;
+#X obj 225 405 outlet;
+#X obj 103 147 bng 15 250 50 0 empty empty close 17 7 0 10 -262144
+-1 -1;
+#X msg 333 39 enumerate;
+#X msg -5 279 horizontal;
+#X msg 70 279 vertical;
+#X msg 130 279 both;
+#X obj 157 147 bng 15 250 50 0 empty empty flip_vetical 17 7 0 10 -262144
+-1 -1;
+#X obj 260 118 bng 15 250 50 0 empty empty flip_both 17 7 0 10 -262144
+-1 -1;
+#X obj 276 303 print videoin;
+#X msg 296 237 open;
+#X msg 519 238 device \$1;
+#X obj 338 147 hradio 15 1 0 4 empty empty device 0 -8 0 10 -262144
+-1 -1 1;
+#X msg 452 237 enumerate;
+#X obj 396 117 bng 15 250 50 0 empty empty enum 17 7 0 10 -262144 -1
+-1;
+#X msg 435 58 1;
+#X obj 437 35 loadbang;
+#X obj 140 40 inlet flip;
+#X obj 225 18 gemhead 10;
+#X connect 0 0 2 0;
+#X connect 0 1 18 0;
+#X connect 1 0 0 0;
+#X connect 2 0 5 0;
+#X connect 2 0 10 0;
+#X connect 3 0 2 0;
+#X connect 4 0 0 0;
+#X connect 6 0 19 0;
+#X connect 7 0 1 0;
+#X connect 8 0 13 0;
+#X connect 9 0 3 0;
+#X connect 11 0 4 0;
+#X connect 12 0 0 0;
+#X connect 13 0 2 0;
+#X connect 14 0 2 0;
+#X connect 15 0 2 0;
+#X connect 16 0 14 0;
+#X connect 17 0 15 0;
+#X connect 19 0 0 0;
+#X connect 20 0 0 0;
+#X connect 21 0 20 0;
+#X connect 22 0 0 0;
+#X connect 23 0 22 0;
+#X connect 24 0 21 0;
+#X connect 25 0 24 0;
+#X connect 26 0 2 0;
+#X connect 27 0 0 0;
+#X coords 0 -1 1 1 350 65 1 100 100;
