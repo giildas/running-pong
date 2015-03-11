@@ -1,0 +1,40 @@
+#N canvas 286 45 570 368 10;
+#X obj 110 47 gemhead;
+#X obj 110 315 text3d;
+#X obj 110 69 translateXYZ \$1 \$2 0;
+#X obj 146 91 loadbang;
+#X msg 157 135 text 0;
+#X obj 248 239 counter;
+#X obj 304 170 bng 15 250 50 0 empty reset_score reset 17 7 0 10 -262144
+-1 -1;
+#X obj 249 268 prepend text;
+#X obj 73 186 color \$3 \$4 \$5;
+#X obj 276 68 inlet;
+#X msg 280 159 inc;
+#X msg 282 190 dec;
+#X obj 304 128 bng 15 250 50 0 empty empty inc 17 7 0 10 -262144 -1
+-1;
+#X obj 304 149 bng 15 250 50 0 empty empty dec 17 7 0 10 -262144 -1
+-1;
+#X obj 304 326 outlet;
+#X msg 146 114 font minecrafter_3.ttf;
+#X msg 177 263 9;
+#X connect 0 0 2 0;
+#X connect 2 0 8 0;
+#X connect 3 0 15 0;
+#X connect 3 0 4 0;
+#X connect 3 0 16 0;
+#X connect 4 0 1 0;
+#X connect 5 0 7 0;
+#X connect 5 0 14 0;
+#X connect 6 0 5 3;
+#X connect 7 0 1 0;
+#X connect 8 0 1 0;
+#X connect 9 0 5 0;
+#X connect 10 0 5 0;
+#X connect 11 0 5 0;
+#X connect 12 0 10 0;
+#X connect 13 0 11 0;
+#X connect 15 0 1 0;
+#X connect 16 0 1 1;
+#X coords 0 -1 1 1 85 90 1 300 100;

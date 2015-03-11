@@ -1,0 +1,5 @@
+#N canvas 0 55 450 300 10;
+#X obj 55 -64 gemhead 3;
+#X obj 55 -36 translateXYZ 0 \$1 0;
+#X obj 55 -10 rectangle 0.025 0.6;
+#X connect 1 0 2 0;

@@ -1,0 +1,13 @@
+#N canvas 326 31 450 300 10;
+#X obj 117 113 onebang;
+#X obj 156 79 r reset;
+#X obj 117 64 inlet;
+#X obj 117 145 outlet;
+#X obj 172 113 delay \$1;
+#X text 32 8 permet un seul bang toutes les X millisecondes (c'est
+l'argument);
+#X connect 0 0 3 0;
+#X connect 0 0 4 0;
+#X connect 1 0 0 1;
+#X connect 2 0 0 0;
+#X connect 4 0 0 1;
