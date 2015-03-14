@@ -34,7 +34,7 @@ ou la \; balle tape dans \; le pad \;;
 #X text 36 214 plus cette valeur \; est petite \, + la \; balle aura
 de l'angle \; defaut : 100;
 #X obj 269 158 r angle;
-#X obj 173 202 / 20;
+#X obj 173 202 / 60;
 #X connect 0 0 4 0;
 #X connect 1 0 4 1;
 #X connect 4 0 9 0;
