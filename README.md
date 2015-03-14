@@ -1,10 +1,8 @@
 # running-pong
 Version pure data du running-pong. 
 
-Fonctionne mal pour le moment, il y a quelques bugs.
+Fonctionne mal pour le moment, il y a quelques améliorations à prévoir
 
 [] couleurs du fond a revoir
-
-[] Bug balle dans le coin
-
 [] trace a la balle ?
+[] ecrire de la doc.
