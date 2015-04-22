@@ -1,4 +1,4 @@
-#N canvas 1076 158 660 611 10;
+#N canvas 383 23 660 611 10;
 #N canvas 396 434 395 291 balle 0;
 #X obj 119 -17 gemhead;
 #X obj 119 88 translateXYZ;
@@ -350,7 +350,7 @@
 #X obj 45 144 switch;
 #X obj 56 -129 inlet list;
 #X obj 158 -168 vradio 15 1 0 3 empty empty empty 0 -8 0 10 -262144
--1 -1 1;
+-1 -1 0;
 #X text 155 -187 aper�u video;
 #X text 195 -107 seuil;
 #X obj 45 353 rectangle 7.11 4;
@@ -423,27 +423,27 @@
 #X restore 257 420 pd keys;
 #X text 134 539 + c'est petit \; + ya d'angle;
 #X text 35 538 + c'est petit \; + ca va vite \; (def 1.2);
-#X obj 286 100 ../video_out;
+#X obj 284 100 ../video_out;
 #X obj -68 99 ../camera_in;
 #X obj 203 312 sp/pad 2 6.5 109 112 1;
 #X obj -37 510 s points_max;
-#X msg -37 486 5;
 #X msg 175 486 0.8;
-#X msg 46 486 1.2;
 #X obj 82 9 sp/crop_interface;
 #X text 286 8 Crop interface sert à modifier le champ \; de la camera
 \; modifier les valeurs à la souris en affichant \; la caméra dans
 le fond \; sauver pour enregistrer les valeurs pour + tard ddd;
+#X msg -37 486 3;
+#X msg 46 486 1.1;
 #X connect 9 0 1 0;
 #X connect 11 0 27 0;
 #X connect 12 0 15 0;
-#X connect 18 0 31 0;
+#X connect 18 0 33 0;
 #X connect 18 0 21 0;
-#X connect 18 0 30 0;
 #X connect 18 0 29 0;
+#X connect 18 0 32 0;
 #X connect 21 0 19 0;
 #X connect 26 0 13 0;
-#X connect 29 0 28 0;
-#X connect 30 0 20 0;
-#X connect 31 0 17 0;
-#X connect 32 0 26 1;
+#X connect 29 0 20 0;
+#X connect 30 0 26 1;
+#X connect 32 0 28 0;
+#X connect 33 0 17 0;
