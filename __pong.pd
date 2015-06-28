@@ -1,4 +1,4 @@
-#N canvas 383 23 660 611 10;
+#N canvas 588 32 660 611 10;
 #N canvas 396 434 395 291 balle 0;
 #X obj 119 -17 gemhead;
 #X obj 119 88 translateXYZ;
@@ -103,7 +103,7 @@
 #X connect 12 0 6 0;
 #X connect 14 0 2 0;
 #X restore -7 420 pd init;
-#N canvas 387 106 986 617 design 0;
+#N canvas 283 86 986 617 design 0;
 #X obj 29 365 rectangle 7.11 4;
 #X obj 29 -117 gemhead 2;
 #X obj 29 337 pix_texture;
@@ -140,6 +140,10 @@
 #X obj 499 -64 sp/dash 0;
 #X obj 499 -44 sp/dash 2;
 #X obj 499 -24 sp/dash 4;
+#X msg 564 283 255 255 255 127 127 127;
+#X obj 557 356 unpack f f;
+#X obj 502 419 print left;
+#X obj 582 419 print right;
 #X connect 1 0 13 0;
 #X connect 2 0 0 0;
 #X connect 3 0 8 0;
@@ -173,6 +177,9 @@
 #X connect 28 0 13 3;
 #X connect 29 0 13 1;
 #X connect 30 0 25 0;
+#X connect 36 0 37 0;
+#X connect 37 0 38 0;
+#X connect 37 1 39 0;
 #X restore -68 420 pd design;
 #N canvas 328 224 887 300 son 0;
 #X obj 40 75 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
@@ -254,7 +261,7 @@
 -1 -1;
 #X obj 103 157 bng 25 250 50 0 empty empty 2_gagne 27 12 0 10 -162280
 -1 -1;
-#X obj 102 191 bng 25 250 50 0 empty reset_score off 27 12 0 10 -262144
+#X obj 103 186 bng 25 250 50 0 empty reset_score off 27 12 0 10 -262144
 -1 -1;
 #X obj 53 372 loadbang;
 #X obj 69 423 loadbang;
@@ -280,8 +287,8 @@
 #X connect 16 0 12 0;
 #X connect 17 0 5 0;
 #X coords 0 -1 1 1 120 120 1 100 100;
-#X restore -68 292 pd message_victoire;
-#X obj 139 170 loadbang;
+#X restore -67 292 pd message_victoire;
+#X obj 226 160 loadbang;
 #N canvas 301 233 593 697 speed 0;
 #X obj 170 185 s speed;
 #X obj 173 -155 counter;
@@ -329,8 +336,8 @@
 #X connect 18 5 19 0;
 #X connect 19 0 9 0;
 #X restore 202 420 pd speed;
-#X obj 203 290 r ypad2;
-#X obj 58 290 r ypad1;
+#X obj 218 290 r ypad2;
+#X obj 58 291 r ypad1;
 #N canvas 767 209 629 692 tracking 0;
 #X floatatom 311 253 3 0 0 0 - - -;
 #X floatatom 287 252 3 0 0 0 - - -;
@@ -350,7 +357,7 @@
 #X obj 45 144 switch;
 #X obj 56 -129 inlet list;
 #X obj 158 -168 vradio 15 1 0 3 empty empty empty 0 -8 0 10 -262144
--1 -1 0;
+-1 -1 1;
 #X text 155 -187 aper�u video;
 #X text 195 -107 seuil;
 #X obj 45 353 rectangle 7.11 4;
@@ -404,7 +411,6 @@
 #X coords 0 -1 1 1 100 120 1 150 -200;
 #X restore -68 168 pd tracking;
 #X text 285 138 g=start \; r=reset;
-#X obj 58 312 sp/pad 1 -6.5 113 97 -1;
 #X obj -68 442 cnv 15 320 100 empty empty réglages 20 12 0 14 -232576
 -66577 0;
 #X obj 46 510 s speedcoeff;
@@ -423,27 +429,32 @@
 #X restore 257 420 pd keys;
 #X text 134 539 + c'est petit \; + ya d'angle;
 #X text 35 538 + c'est petit \; + ca va vite \; (def 1.2);
-#X obj 284 100 ../video_out;
+#X obj 106 99 ../video_out;
 #X obj -68 99 ../camera_in;
-#X obj 203 312 sp/pad 2 6.5 109 112 1;
 #X obj -37 510 s points_max;
 #X msg 175 486 0.8;
-#X obj 82 9 sp/crop_interface;
-#X text 286 8 Crop interface sert à modifier le champ \; de la camera
-\; modifier les valeurs à la souris en affichant \; la caméra dans
-le fond \; sauver pour enregistrer les valeurs pour + tard ddd;
+#X obj 95 5 sp/crop_interface;
 #X msg -37 486 3;
 #X msg 46 486 1.1;
+#X obj 218 312 sp/pad 2 6.5 109 112 1 1;
+#X obj 58 312 sp/pad 1 -6.5 113 97 -1 2;
+#X obj 7 54 print crop;
+#X text 301 10 Crop interface sert à modifier le champ \; de la camera
+\; modifier les valeurs à la souris en affichant \; la caméra dans
+le fond \; pour enregistrer les valeurs pour + tard \; ouvre le sous
+patch et mets les valeurs;
+#X connect 9 0 7 0;
 #X connect 9 0 1 0;
-#X connect 11 0 27 0;
-#X connect 12 0 15 0;
-#X connect 18 0 33 0;
-#X connect 18 0 21 0;
-#X connect 18 0 29 0;
-#X connect 18 0 32 0;
-#X connect 21 0 19 0;
-#X connect 26 0 13 0;
-#X connect 29 0 20 0;
-#X connect 30 0 26 1;
-#X connect 32 0 28 0;
-#X connect 33 0 17 0;
+#X connect 11 0 31 0;
+#X connect 12 0 32 0;
+#X connect 17 0 30 0;
+#X connect 17 0 20 0;
+#X connect 17 0 27 0;
+#X connect 17 0 29 0;
+#X connect 20 0 18 0;
+#X connect 25 0 13 0;
+#X connect 27 0 19 0;
+#X connect 28 0 25 1;
+#X connect 28 0 33 0;
+#X connect 29 0 26 0;
+#X connect 30 0 16 0;
